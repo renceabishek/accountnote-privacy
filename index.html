@@ -4,96 +4,275 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AccountNote Privacy Policy</title>
+    <meta
+      name="description"
+      content="How AccountNote handles your data: stored on your phone, no account, no server. Partner sync goes phone to phone over your own Wi-Fi."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Mukta+Malar:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      /* AccountNote's Dot journal colours: a dotted page, white cards, washi tape. */
       :root {
-        --paper: #ffffff;
-        --ink: #20204a;
-        --cloth: #8e1b2b;
-        --rule: #dddce4;
+        --page: #f3f5f1;
+        --dots: #cfd6ce;
+        --card: #ffffff;
+        --edge: #e3e8e2;
+        --ink: #1b211d;
+        --muted: #5b665f;
+        --indigo: #3d4fe0;
+        --mint: #bfe8d3;
+        --lime: #e6f2a8;
+        --peach: #ffd9c2;
+        --sky: #bfe0f5;
+        --tape-ink: #1b211d;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --page: #141a16;
+          --dots: #26302a;
+          --card: #1f2722;
+          --edge: #2c3630;
+          --ink: #e8eee9;
+          --muted: #a9b6ad;
+          --indigo: #9aa5ff;
+        }
+      }
+      * {
+        box-sizing: border-box;
       }
       body {
         margin: 0;
-        background: var(--paper);
+        background-color: var(--page);
+        background-image: radial-gradient(var(--dots) 1.2px, transparent 1.2px);
+        background-size: 22px 22px;
         color: var(--ink);
-        font: 17px/1.6 Georgia, 'Times New Roman', serif;
-      }
-      header {
-        background: var(--cloth);
-        color: var(--paper);
-        padding: 28px 16px;
-        border-bottom: 3px dashed #e2a829;
-      }
-      header h1 {
-        max-width: 680px;
-        margin: 0 auto;
-        font-size: 28px;
+        font: 17px/1.65 'Mukta Malar', system-ui, -apple-system, 'Segoe UI', sans-serif;
       }
       main {
-        max-width: 680px;
+        max-width: 720px;
         margin: 0 auto;
-        padding: 16px 16px 48px;
+        padding: 40px 16px 56px;
       }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+      header svg {
+        flex: none;
+        width: 72px;
+        height: 72px;
+      }
+      h1 {
+        margin: 0;
+        font: 800 clamp(28px, 6vw, 40px) / 1.1 'Bricolage Grotesque', system-ui, sans-serif;
+      }
+      .updated {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+      section {
+        background: var(--card);
+        border: 1px solid var(--edge);
+        border-radius: 20px;
+        padding: 30px 22px 18px;
+        margin: 34px 0 0;
+        position: relative;
+      }
+      /* Each heading is a strip of washi tape across the card's top edge. */
       h2 {
+        position: absolute;
+        top: -17px;
+        left: 18px;
+        margin: 0;
+        padding: 3px 14px;
+        background: var(--lime);
+        color: var(--tape-ink);
+        font: 700 18px/1.5 'Bricolage Grotesque', system-ui, sans-serif;
+        transform: rotate(-1.5deg);
+      }
+      section:nth-of-type(4n + 2) h2 {
+        background: var(--mint);
+        transform: rotate(1.2deg);
+      }
+      section:nth-of-type(4n + 3) h2 {
+        background: var(--peach);
+        transform: rotate(-1deg);
+      }
+      section:nth-of-type(4n + 4) h2 {
+        background: var(--sky);
+        transform: rotate(1.5deg);
+      }
+      p,
+      ul {
+        margin: 0 0 12px;
+      }
+      ul {
+        padding-left: 22px;
+      }
+      li {
+        margin-bottom: 6px;
+      }
+      strong {
+        font-weight: 700;
+      }
+      a {
+        color: var(--indigo);
+      }
+      .summary li::marker {
+        color: var(--indigo);
+      }
+      footer {
         margin-top: 32px;
-        padding-bottom: 4px;
-        border-bottom: 1px solid var(--rule);
-        font-size: 20px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
       }
     </style>
   </head>
   <body>
-    <header><h1>AccountNote Privacy Policy</h1></header>
     <main>
-      <p>Last updated: 6 November 2026</p>
-      <p>
-        AccountNote is a personal expense tracker for Android. It works offline, and it has no
-        accounts or sign-in. This policy explains what happens to the information you enter.
-      </p>
+      <header>
+        <!-- Noto, AccountNote's notebook. -->
+        <svg viewBox="0 0 108 108" role="img" aria-label="AccountNote">
+          <rect width="108" height="108" rx="26" fill="#BFE8D3" />
+          <rect x="24" y="22" width="60" height="68" rx="12" fill="#3D4FE0" />
+          <rect x="30" y="26" width="52" height="60" rx="9" fill="#FFFFFF" />
+          <rect x="24" y="32" width="9" height="6" rx="3" fill="#1B211D" />
+          <rect x="24" y="48" width="9" height="6" rx="3" fill="#1B211D" />
+          <rect x="24" y="64" width="9" height="6" rx="3" fill="#1B211D" />
+          <rect x="44" y="18" width="30" height="11" fill="#FFD9C2" transform="rotate(-6 59 23)" />
+          <ellipse cx="48" cy="52" rx="4.2" ry="5.5" fill="#1B211D" />
+          <ellipse cx="66" cy="52" rx="4.2" ry="5.5" fill="#1B211D" />
+          <circle cx="42" cy="62" r="3.5" fill="#FFC9B5" />
+          <circle cx="72" cy="62" r="3.5" fill="#FFC9B5" />
+          <path d="M50 63 Q57 70 64 63" stroke="#1B211D" stroke-width="3" fill="none" stroke-linecap="round" />
+        </svg>
+        <div>
+          <h1>AccountNote Privacy Policy</h1>
+          <p class="updated">Last updated: 20 November 2026</p>
+        </div>
+      </header>
 
-      <h2>Information we collect</h2>
-      <p>
-        We don't collect any information. The developer has no server for this app and can't see
-        your transactions, budgets, categories, accounts, tags or notes.
-      </p>
+      <section>
+        <h2>The short version</h2>
+        <ul class="summary">
+          <li>Everything you enter is stored on your phone. There's no account, no sign-in and no server.</li>
+          <li>The developer doesn't collect, receive, sell or share any of your data.</li>
+          <li>
+            If you pair with a partner, your entries go <strong>directly to your partner's phone</strong>
+            over your own Wi-Fi or hotspot, encrypted. They never pass through the internet or any server.
+          </li>
+          <li>No ads, no analytics, no tracking.</li>
+        </ul>
+      </section>
 
-      <h2>Where your data is stored</h2>
-      <p>
-        Everything you enter is stored in a database on your phone. If you uninstall the app or use
-        Reset all data in Settings, it's deleted from the app.
-      </p>
-      <p>
-        If Android backup is turned on for your Google account, Android may include the app's data
-        in your phone's backup. That backup is managed by Google under your account, and you can turn
-        it off in your phone's settings.
-      </p>
+      <section>
+        <h2>What's stored on your phone</h2>
+        <p>
+          Your transactions (amount, date, time, category, account, notes and tags), categories,
+          accounts, budgets, recurring transactions and settings. They're kept in the app's private
+          storage on your phone, where the developer can't see them.
+        </p>
+        <p>
+          If you pair with a partner, the app also keeps a read-only copy of what your partner shares
+          with you, your partner's name, and a secret key used to encrypt your syncs.
+        </p>
+        <p>
+          If Android backup is on for your Google account, Android may include the app's data in your
+          phone's backup. Google manages that backup under your account, and you can turn it off in
+          your phone's settings.
+        </p>
+      </section>
 
-      <h2>Files you export</h2>
-      <p>
-        Export creates a CSV file only when you ask for it, and you choose where it goes. Once you
-        send or save that file somewhere else, that app or service's own privacy policy applies. The
-        file isn't encrypted, so keep it somewhere safe.
-      </p>
+      <section>
+        <h2>Partner sync</h2>
+        <p>Partner sync is optional, and nothing is shared until you pair.</p>
+        <ul>
+          <li>
+            <strong>Pairing:</strong> one phone shows a QR code and the other scans it. The code holds
+            the showing phone's ID, the name you chose to show, a one-time secret key and its address on
+            your Wi-Fi. It works once, for 10 minutes.
+          </li>
+          <li>
+            <strong>What's shared:</strong> your transactions, categories, sub-categories, accounts and
+            budgets. Entries you mark <strong>"Don't share"</strong> are never sent.
+          </li>
+          <li>
+            <strong>How:</strong> the two phones connect directly on the same Wi-Fi or hotspot.
+            Everything sent is encrypted (AES-GCM) with the key from pairing, and each sync needs the
+            other phone's owner to allow it. Nothing goes to the internet, the developer or anyone else.
+          </li>
+          <li>
+            <strong>Your partner's copy:</strong> your partner can see what you share but can't change
+            it, and you can't change theirs.
+          </li>
+          <li>
+            <strong>Stopping:</strong> Settings › Partner › Remove deletes your partner's copy from your
+            phone. To delete your entries from your partner's phone, ask them to remove you too.
+          </li>
+        </ul>
+      </section>
 
-      <h2>Notifications</h2>
-      <p>
-        Budget alerts and recurring reminders are created on your phone. The app asks for permission
-        to show them, and you can turn them off in the app's Settings or your phone's settings.
-      </p>
+      <section>
+        <h2>Permissions</h2>
+        <ul>
+          <li><strong>Camera:</strong> only to scan your partner's pairing QR code. No photos or video are saved or sent.</li>
+          <li><strong>Local network / Wi-Fi:</strong> only to find your partner's phone on the same Wi-Fi or hotspot and sync with it.</li>
+          <li>
+            <strong>Notifications:</strong> for budget alerts and recurring reminders, created on your
+            phone. You can turn them off in the app's Settings or your phone's settings.
+          </li>
+        </ul>
+      </section>
 
-      <h2>Ads, analytics and third parties</h2>
-      <p>
-        The app has no ads and no analytics or tracking tools, and it doesn't sell or share your
-        data with anyone.
-      </p>
+      <section>
+        <h2>Files you export</h2>
+        <p>
+          Export creates a CSV file only when you ask for it, and you choose where it goes. Once you
+          send or save it somewhere else, that app or service's own privacy policy applies. The file
+          isn't encrypted, so keep it somewhere safe.
+        </p>
+      </section>
 
-      <h2>Children</h2>
-      <p>The app isn't directed at children under 13, and it doesn't knowingly collect their data.</p>
+      <section>
+        <h2>Deleting your data</h2>
+        <ul>
+          <li>Uninstalling the app deletes everything it stored on your phone.</li>
+          <li>
+            <strong>Reset all data</strong> in Settings deletes your own entries, budgets, recurring
+            transactions, categories and accounts. If you're paired, your partner's copy of your entries
+            is cleared at your next sync, and your partner's book stays on your phone until you remove
+            your partner.
+          </li>
+          <li>You can also delete any entry at any time.</li>
+        </ul>
+      </section>
 
-      <h2>Changes to this policy</h2>
-      <p>If this policy changes, the new version will be posted here with a new date.</p>
+      <section>
+        <h2>Children</h2>
+        <p>
+          AccountNote is meant for adults. It isn't directed at children under 13, and it doesn't
+          knowingly collect anyone's data.
+        </p>
+      </section>
 
-      <h2>Contact</h2>
-      <p>Questions about this policy: renceabishek2026@gmail.com</p>
+      <section>
+        <h2>Changes and contact</h2>
+        <p>If this policy changes, the new version will be posted here with a new date.</p>
+        <p>
+          Questions about this policy:
+          <a href="mailto:renceabishek2026@gmail.com">renceabishek2026@gmail.com</a>
+        </p>
+      </section>
+
+      <footer>AccountNote · Your money, neatly noted.</footer>
     </main>
   </body>
 </html>
